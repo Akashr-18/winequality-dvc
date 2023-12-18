@@ -1,0 +1,17 @@
+Env name: wineq
+
+1. -conda create -n wineq python=3.9 -y
+   -conda activate wineq
+   -pip install -r requirements.txt
+   -python template.py
+
+2. create "data_given" folder and add the csv file.
+
+3. -git init
+   -dvc init
+   -dvc add data_given/winequality.csv
+   -git add .
+   -git commit -m "first commit"
+   -git remote add origin https://github.com/c17hawke/simple-dvc-demo.git
+   -git branch -M main
+   -git push origin main
