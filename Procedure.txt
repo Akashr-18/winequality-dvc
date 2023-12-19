@@ -12,6 +12,11 @@ Env name: wineq
    -dvc add data_given/winequality.csv
    -git add .
    -git commit -m "first commit"
-   -git remote add origin https://github.com/c17hawke/simple-dvc-demo.git
+   -git remote add origin https://github.com/Akashr-18/winequality-dvc.git
    -git branch -M main
    -git push origin main
+
+4. Update "params.yaml" file
+   
+5. --Create get_data.py
+   --Update dvc.yaml
