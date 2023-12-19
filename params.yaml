@@ -1,0 +1,16 @@
+base:
+  project: winequality-project
+  random_state: 144
+  target_column: TARGET
+
+datasource:
+  blob_source: data_given/winequality.csv
+
+load_data:
+  raw_folder_path: data/raw/winequality.csv
+
+split_data:
+  train_path: data/processed/train_winequality.csv
+  test_path: data/processed/test_winequality.csv
+  test_size: 0.2
+  
