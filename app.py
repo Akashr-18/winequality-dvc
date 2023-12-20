@@ -1,7 +1,9 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import os
+from prediction_service import prediction
 
 webapp_root = 'webapp'
+
 static_dir = os.path.join(webapp_root, 'static')
 template_dir = os.path.join(webapp_root, 'templates')
 
@@ -10,7 +12,21 @@ app = Flask(__name__, static_folder=static_dir, template_folder=template_dir)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        pass
+        try:
+            if request.form:
+                data_dict = dict(request.form)
+                response = prediction.form_response(data_dict)
+                return render_template('index.html', response=response)
+            elif request.json:
+                response = prediction.api_response(request.json)
+                return jsonify(response)
+
+        except Exception as e:
+            print('Error : %s' % e)
+            error = {'error': 'SoMeThInG WeNt WrOnG!!'}
+            error = {'error': e}
+            return render_template('404.html', error=error)
+            
     else:
         return render_template('index.html')
 
