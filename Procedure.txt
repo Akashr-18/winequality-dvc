@@ -51,5 +51,16 @@ Env name: wineq
    create tox.ini
    create tests dir --- init/conftest/test_config files
    Update demo in test_config file
-   Run tox command in terminal
+     Run tox command in terminal
+   # tox -r #To rerun
+
+13. Create prediction_service/model dir
+   prediction_service/__init__.py
+   prediction_service/prediction.py
+   app.py
+   webapp/static/css/main.css
+   webapp/static/script/index.js
+   webapp/templates/index.html
+   webapp/templates/404.html
+   webapp/templates/base.html
 
