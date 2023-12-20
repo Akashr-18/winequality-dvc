@@ -41,5 +41,5 @@ Env name: wineq
    --git add . && git commit -m "message"
    --git push origin main
 
-9. --dvc metrics show
+9. --dvc metrics show #only shows when there is difference
    --dvc metrics diff
