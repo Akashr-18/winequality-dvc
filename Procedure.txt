@@ -43,3 +43,13 @@ Env name: wineq
 
 9. --dvc metrics show
    --dvc metrics diff
+
+10. Prepare setup.py
+   python setup.py sdist bdist_wheel  #We can share that to anyone as tar.gz 
+
+11. pytest and tox
+   create tox.ini
+   create tests dir --- init/conftest/test_config files
+   Update demo in test_config file
+   Run tox command in terminal
+
