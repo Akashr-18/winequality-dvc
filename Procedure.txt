@@ -19,4 +19,9 @@ Env name: wineq
 4. Update "params.yaml" file
    
 5. --Create get_data.py
+
+6. --Create load_data.py
    --Update dvc.yaml
+   --dvc repro
+   --git add . && git commit -m "message"
+   --git push origin main

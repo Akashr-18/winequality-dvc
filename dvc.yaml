@@ -1,0 +1,10 @@
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - src/load_data.py
+    - src/get_data.py
+    - data_given/winequality.csv
+    outs:
+    - data/raw/winequality.csv   #will be tracked by DVC
+    
