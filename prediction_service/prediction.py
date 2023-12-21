@@ -19,9 +19,9 @@ def predict(data):
 
 def form_response(dict_request):
     data = dict_request.values()
-    print("Data1: ", data)
+    print("Data1: ", data)   #dict_values(['0', '0'...])
     data = [list(map(float, data))]
-    print("Data2: ", data)
+    print("Data2: ", data)   #[[0.0,0.0....]]
     response = predict(data)
     return response
 
