@@ -8,7 +8,7 @@ config_path = "params.yaml"
 schema_path = os.path.join("prediction_service", "schema_in.json")
 
 class NotInRange(Exception):
-    def __init__(self, message="Values enteres not in range"):
+    def __init__(self, message="Values entered not in range"):
         self.message = message
         super().__init__(self.message)
 
@@ -16,6 +16,11 @@ class NotInCols(Exception):
     def __init__(self, message="Not in cols"):
         self.meassage = message
         super().__init__(self.message)
+
+# class NoValue(Exception):
+#     def __init__(self, message="Provide input to proceed"):
+#         self.message = message
+#         super().__init__(self.message)
 
 def read_yaml(config_path):
     with open(config_path) as yaml_file:
@@ -51,10 +56,17 @@ def validate_input(dict_request):
         schema = get_schema()
         if not (schema[col]['min'] <= float(dict_request[col]) <= schema[col]['max']):
             raise NotInRange
+        
+    # def no_values(col): 
+    #     print("Hello", col)  #fixed_acidity
+    #     print("Hello1", dict_request[col])   #5
+    #     if dict_request[col] == '':
+    #         raise NoValue
 
     for col, val in dict_request.items():
         validate_cols(col),
         validate_values(col, val)
+        # no_values(col)
 
     return True
 
@@ -72,6 +84,10 @@ def form_response(dict_request):
         response = {'expected_range': get_schema(),
                     'response':str(e)}
         return response
+    
+    # except NoValue as e:
+    #     response = {'resssponse':str(e)}
+    #     return response
     
     except Exception as e:
         response = {'response':str(e)}

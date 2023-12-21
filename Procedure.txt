@@ -65,6 +65,8 @@ Python version: 3.9
    webapp/templates/index.html
    webapp/templates/404.html
    webapp/templates/base.html
-   
-14. .github/workflows/ci-cd.yaml
+
+14. Update app.py and prediction_service/predict.py
+
+15. .github/workflows/ci-cd.yaml
 
