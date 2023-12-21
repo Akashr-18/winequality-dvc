@@ -42,8 +42,7 @@ Python version: 3.9
    --git add . && git commit -m "message"
   --git push origin main
 
-<<<<<<< HEAD
-9. --dvc metrics show
+9. --dvc metrics show #only shows when there is difference
    --dvc metrics diff
 
 10. Prepare setup.py
@@ -69,7 +68,3 @@ Python version: 3.9
    
 14. .github/workflows/ci-cd.yaml
 
-=======
-9. --dvc metrics show #only shows when there is difference
-   --dvc metrics diff
->>>>>>> cf766783fd24f70d127b0d181f3554b2b950ecfe
